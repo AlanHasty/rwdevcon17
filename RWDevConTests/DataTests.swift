@@ -64,4 +64,10 @@ class DataTests: XCTestCase {
     person.last = "吴"
     XCTAssertEqual(person.fullNameFor("zh"), "吴桐")
   }
+  func testPersonCreatesCorrectFullChineseNameFail() {
+    let person = Person.personByIdentifierOrNew(identifier: "Alan", context: coreDataStack.context)
+    person.first = "Alan"
+    person.last = "Joe"
+    XCTAssertEqual(person.fullNameFor("en"), "JOE Alan" )
+  }
 }

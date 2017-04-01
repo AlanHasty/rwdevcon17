@@ -65,7 +65,7 @@ class DataTests: XCTestCase {
     XCTAssertEqual(person.fullNameFor("zh"), "吴桐")
   }
 
-  func testPersonCreatesCorrectFullName() {
+  func testPersonCreatesCorrectFullNameFail() {
     let person = Person.personByIdentifierOrNew(identifier: "Alan", context: coreDataStack.context)
     person.first = "Alan"
     person.last = "Wu"
